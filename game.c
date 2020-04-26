@@ -5,29 +5,37 @@
 #include"arena.h"
 #include"cell.h"
 
-
-int **GameStep(int size, int **game){
+/*
+GameStep function generates new board(2Darray)
+As it follows the rules by applying cellSituation() function in t
+*/
+int **GameStep(int size, int **game){  
     int **copy=copyArena(size,game);
     for(int i=0;i<size;i++){
         for (int j=0; j<size;j++){
-            game[i][j]=cellSituation(i, j, size, copy);            
+            game[i][j]=cellSituation(i, j, size, copy);        // Edit cell    
         }
     }
-    return game;
+    return game;                                           // Returns new board
 }
 
+/*
+Drawing part*
+The function performs ANSI codes that indicate the alive and dead cells
+Following the rule for '0' cells it gives white color and for '1' red color
+*/
 
 void playGame(int size, int **arena){
-    printf("\33[1J");
+    printf("\33[1J");                      // clear screen
     while(1){
-        printf("\033[?25l");
+        printf("\033[?25l");                // Hide cursor
         for(int i=0; i<size; i++){
             printf("\033[%d;4H",i+2);
             for(int j=0; j<size; j++){
                 if(arena[i][j]==1){
-                    printf("\033[41m  ");
+                    printf("\033[41m  ");   // Red color
                 }else{
-                    printf("\033[47m  ");
+                    printf("\033[47m  ");   // White color
                 }
             }
             printf("\n");
@@ -36,5 +44,5 @@ void playGame(int size, int **arena){
         sleep(1);
         arena=GameStep(size, arena);
         }
-
+    
 }
