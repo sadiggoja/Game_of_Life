@@ -4,23 +4,27 @@
 #include<unistd.h>
 #include"cell.h"
 
-int sumOfNeighbors(int i, int j, int size, int **arena){
-    int sum=0;
+int sumOfNeighbors(int i, int j, int size, int **arena){          // For each cell checks the number of neighbours
+    int sum=0;                                                    // Since alive cell equals to '1',so the sum of neighbours will be the alive cells(Neighbours).
     if(i==0){
         if(j==0){
             sum=arena[i+1][j]+arena[i+1][j+1]+arena[i][j+1];
-        }
-        else if(j==(size-1)){
-            sum=arena[i+1][j]+arena[i+1][j-1]+arena[i][j-1];
-        }
-        else{sum=arena[i+1][j]+arena[i+1][j-1]+arena[i+1][j+1]+arena[i][j-1]+arena[i][j+1];}
+        }else if(j==(size-1)){
+                sum=arena[i+1][j]+arena[i+1][j-1]+arena[i][j-1];
+              }else{
+                    sum=arena[i+1][j]+arena[i+1][j-1]+arena[i+1][j+1]+arena[i][j-1]+arena[i][j+1];
+               }
     }else if(i==(size-1)){
-        if(j==0){sum=arena[i-1][j]+arena[i][j+1]+arena[i-1][j+1];}
-        else if(j==(size-1)){sum=arena[i-1][j]+arena[i-1][j-1]+arena[i][j-1];}
-        else {sum=arena[i-1][j]+arena[i-1][j-1]+arena[i-1][j+1]+arena[i][j-1]+arena[i][j+1];}
-    }else if (j==0){
-        sum=arena[i][j+1]+arena[i-1][j]+arena[i+1][j]+arena[i-1][j+1]+arena[i+1][j+1];
-    }else if (j==(size-1)){
+            if(j==0){
+                sum=arena[i-1][j]+arena[i][j+1]+arena[i-1][j+1];
+            }else if(j==(size-1)){
+                     sum=arena[i-1][j]+arena[i-1][j-1]+arena[i][j-1];
+                  }else {
+                      sum=arena[i-1][j]+arena[i-1][j-1]+arena[i-1][j+1]+arena[i][j-1]+arena[i][j+1];
+                   }
+          }else if (j==0){
+                        sum=arena[i][j+1]+arena[i-1][j]+arena[i+1][j]+arena[i-1][j+1]+arena[i+1][j+1];
+                    }else if (j==(size-1)){
         sum=arena[i][j-1]+arena[i-1][j]+arena[i+1][j-1]+arena[i+1][j]+arena[i-1][j-1];
     }else {
         sum=arena[i-1][j-1]+arena[i-1][j]+arena[i-1][j+1]+arena[i][j+1]+arena[i][j-1]+arena[i+1][j-1]+arena[i+1][j]+arena[i+1][j+1];
@@ -28,8 +32,14 @@ int sumOfNeighbors(int i, int j, int size, int **arena){
     return sum;
 }
 
-int cellSituation (int i, int j, int size, int **arena){
-    int neighbors=sumOfNeighbors(i,j,size,arena);
+/*
+ CellSituatuin function get main 2D array 
+ check the rules 
+ return new integer
+ ref* to game.c -> int **GameStep(int size, int **game)
+*/
+int cellSituation (int i, int j, int size, int **arena){   
+    int neighbors=sumOfNeighbors(i,j,size,arena);  // gets the number of alive neighbours
     if(arena[i][j]==0){
         if(neighbors==3){
             return 1;
@@ -47,3 +57,5 @@ int cellSituation (int i, int j, int size, int **arena){
     }
 
 }
+
+        
