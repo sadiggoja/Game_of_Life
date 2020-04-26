@@ -4,6 +4,8 @@
 #include<unistd.h>
 #include"arena.h"
 #include"cell.h"
+
+
 int **GameStep(int size, int **game){
     int **copy=copyArena(size,game);
     for(int i=0;i<size;i++){
@@ -16,7 +18,7 @@ int **GameStep(int size, int **game){
 
 
 void playGame(int size, int **arena){
-    printf("\33[2J");
+    printf("\33[1J");
     while(1){
         printf("\033[?25l");
         for(int i=0; i<size; i++){
