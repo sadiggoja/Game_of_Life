@@ -36,6 +36,40 @@ int sumOfNeighbors(int i, int j, int size, int **arr){
     }
     return sum;
 }
+int **copyArr(int size, int **arr){
+    int **copy=(int**)malloc(size*sizeof(int*));
+    for(int i=0; i<size;i++) 
+        copy[i]=(int*)malloc(size*sizeof(int));
+    for(int i=0; i<size; i++){
+        for(int j=0;j<size;j++)
+            copy[i][j]=arr[i][j];
+    }
+    return copy;
+}
+int **GameStep(int size, int **game){
+    int **copy=copyArr(size,game);
+    for(int i=0;i<size;i++){
+        for (int j=0; j<size;j++){
+            if(copy[i][j]==0){
+                if (sumOfNeighbors(i,j,size,copy)==3){
+                    game[i][j]=1;
+                }
+            }
+            else{
+                if (sumOfNeighbors(i,j,size,copy)==3||sumOfNeighbors(i,j,size,copy)==2){
+                    continue;
+                }else{
+                    game[i][j]=0;                    
+                }
+            }
+        }
+    }
+
+    return game;
+}
+
+
+
 int main(){
     // printf("%d\n",newArena(15));
 
@@ -48,24 +82,41 @@ int main(){
 	// printf("\033[?25l");
 
 
-    srand(time(0));
+    // srand(time(0));
     for(int i=0; i<5; i++){
         for(int j=0; j<5; j++){
+            // scanf("%d", &(mans[i][j]));
+            // printf("%d ", mans[i][j]);
             mans[i][j]=rand()%2;
-            printf("%d ", mans[i][j]);
         }
-        printf("\n");
+        // printf("new row\n");
     }
     printf("\n");
-for(int i=0; i<5; i++){
+    int hmmmm;
+    while(1){
+    for(int i=0; i<5; i++){
+        printf("\033[%d;4H",i+2);
         for(int j=0; j<5; j++){
-            printf("%d ", sumOfNeighbors(i,j,5,mans));
+            // printf("%d ", mans[i][j]);
+            if(mans[i][j]==1){
+                printf("\033[104m  ");
+
+            }else{
+                printf("\033[40m  ");
+
+            }
         }
         printf("\n");
-    }
-    printf("\n");
-    
+        }
+        // printf("\n");
+    // scanf("%d",&hmmmm);
+    // printf("\n");
+	printf("\033[?25h");
 
+    sleep(1);
+    mans=GameStep(size, mans);
+
+    }
 
     // for(int i=0; i<5; i++){
     //     printf("\033[%d;4H",i+2);
