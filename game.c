@@ -16,14 +16,16 @@ int **GameStep(int size, int **game){
 
 
 void playGame(int size, int **arena){
+    printf("\33[2J");
     while(1){
+        printf("\033[?25l");
         for(int i=0; i<size; i++){
             printf("\033[%d;4H",i+2);
             for(int j=0; j<size; j++){
                 if(arena[i][j]==1){
-                    printf("\033[104m  ");
+                    printf("\033[41m  ");
                 }else{
-                    printf("\033[40m  ");
+                    printf("\033[47m  ");
                 }
             }
             printf("\n");
