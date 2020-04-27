@@ -46,5 +46,6 @@ void printArenaDigits(int size, int **arena){ // This function prints the 2D arr
         }
         printf("\n");
     }
+    printf("\n");
 
 }

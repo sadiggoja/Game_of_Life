@@ -26,6 +26,7 @@ Following the rule for '0' cells it gives white color and for '1' red color
 */
 
 void playGame(int size, int **arena){
+    
     printf("\33[1J");                      // clear screen
     while(1){
         printf("\033[?25l");                // Hide cursor

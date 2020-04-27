@@ -9,26 +9,34 @@ int sumOfNeighbors(int i, int j, int size, int **arena){          // For each ce
     if(i==0){                                                                                           // IT check the upper side of board
         if(j==0){        
             sum=arena[i+1][j]+arena[i+1][j+1]+arena[i][j+1];                                            // Left upper cell as it has 3 neigh.
+            if(type==1){sum=sum+arena[i][size-1]+arena[i+1][size-1]+arena[size-1][j]+arena[size-1][j+1]+arena[size-1][size-1];}
         }else if(j==(size-1)){  
-                sum=arena[i+1][j]+arena[i+1][j-1]+arena[i][j-1];                                        // Right upper cell as it has 3 neigh.
-              }else{
-                    sum=arena[i+1][j]+arena[i+1][j-1]+arena[i+1][j+1]+arena[i][j-1]+arena[i][j+1];      // Middle of the upper cells as they have 5 neigh.
-               }
+            sum=arena[i+1][j]+arena[i+1][j-1]+arena[i][j-1];                                        // Right upper cell as it has 3 neigh.
+            if(type==1){sum=sum+arena[0][0]+arena[1][0]+arena[size-1][0]+arena[size-1][j]+arena[size-1][j-1];}
+        }else{
+            sum=arena[i+1][j]+arena[i+1][j-1]+arena[i+1][j+1]+arena[i][j-1]+arena[i][j+1];      // Middle of the upper cells as they have 5 neigh.
+            if(type==1){sum=sum+arena[size-1][j]+arena[size-1][j+1]+arena[size-1][j+1];}            
+        }
     }else if(i==(size-1)){                                                                               // IT checks the bottom cells
-                if(j==0){
-                     sum=arena[i-1][j]+arena[i][j+1]+arena[i-1][j+1];                                    // Left bottom cell as it has 3 neigh                          
-                }else if(j==(size-1)){
-                         sum=arena[i-1][j]+arena[i-1][j-1]+arena[i][j-1];                                // Right bottom cell as it has 3 neigh
-                      }else{
-                           sum=arena[i-1][j]+arena[i-1][j-1]+arena[i-1][j+1]+arena[i][j-1]+arena[i][j+1];  // Middle of the bottom cells as they have 5 neigh
-                       }
-          }else if(j==0){
-                  sum=arena[i][j+1]+arena[i-1][j]+arena[i+1][j]+arena[i-1][j+1]+arena[i+1][j+1];           // Middle cells of the RIGHT side check
-                }else if(j==(size-1)){
-                         sum=arena[i][j-1]+arena[i-1][j]+arena[i+1][j-1]+arena[i+1][j]+arena[i-1][j-1];    // Middle cells of the LEFT side check
-                      }else{
-                             sum=arena[i-1][j-1]+arena[i-1][j]+arena[i-1][j+1]+arena[i][j+1]+arena[i][j-1]+arena[i+1][j-1]+arena[i+1][j]+arena[i+1][j+1];   // And the aside part of the cells that is situated in the middle and have 8 neighbours.              
-                       }
+        if(j==0){
+            sum=arena[i-1][j]+arena[i][j+1]+arena[i-1][j+1];                                    // Left bottom cell as it has 3 neigh                          
+            if(type==1){sum=sum+arena[0][0]+arena[0][1]+arena[size-1][size-1]+arena[0][size-1]+arena[size-2][size-1];}
+        }else if(j==(size-1)){
+            sum=arena[i-1][j]+arena[i-1][j-1]+arena[i][j-1];                                // Right bottom cell as it has 3 neigh
+            if(type==1){sum=sum+arena[0][0]+arena[0][j]+arena[0][j-1]+arena[i][0]+arena[i-1][0];}
+        }else{
+            sum=arena[i-1][j]+arena[i-1][j-1]+arena[i-1][j+1]+arena[i][j-1]+arena[i][j+1];  // Middle of the bottom cells as they have 5 neigh
+            if(type==1){sum=sum+arena[0][j]+arena[0][j-1]+arena[0][j+1];}
+        }
+    }else if(j==0){
+        sum=arena[i][j+1]+arena[i-1][j]+arena[i+1][j]+arena[i-1][j+1]+arena[i+1][j+1];           // Middle cells of the RIGHT side check
+        if(type==1){sum=sum+arena[i][size-1]+arena[i-1][size-1]+arena[i+1][size-1];}
+    }else if(j==(size-1)){
+        sum=arena[i][j-1]+arena[i-1][j]+arena[i+1][j-1]+arena[i+1][j]+arena[i-1][j-1];    // Middle cells of the LEFT side check
+        if(type==1){sum=sum+arena[0][i-1]+arena[0][i]+arena[0][i+1];}
+    }else{
+        sum=arena[i-1][j-1]+arena[i-1][j]+arena[i-1][j+1]+arena[i][j+1]+arena[i][j-1]+arena[i+1][j-1]+arena[i+1][j]+arena[i+1][j+1];   // And the aside part of the cells that is situated in the middle and have 8 neighbours.              
+    }
     return sum;
 }
 
