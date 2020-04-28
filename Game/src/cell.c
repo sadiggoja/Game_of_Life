@@ -9,7 +9,7 @@ int sumOfNeighbors(int i, int j, int size, int **arena){          // For each ce
     if(i==0){                                                                                           // IT check the upper side of board
         if(j==0){        
             sum=arena[i+1][j]+arena[i+1][j+1]+arena[i][j+1];                                            // Left upper cell as it has 3 neigh.
-            if(type==1){sum=sum+arena[i][size-1]+arena[i+1][size-1]+arena[size-1][j]+arena[size-1][j+1]+arena[size-1][size-1];}
+            if(type==1){sum=sum+arena[i][size-1]+arena[i+1][size-1]+arena[size-1][j]+arena[size-1][j+1]+arena[size-1][size-1];}  // In case of circular board
         }else if(j==(size-1)){  
             sum=arena[i+1][j]+arena[i+1][j-1]+arena[i][j-1];                                        // Right upper cell as it has 3 neigh.
             if(type==1){sum=sum+arena[0][0]+arena[1][0]+arena[size-1][0]+arena[size-1][j]+arena[size-1][j-1];}
