@@ -1,19 +1,16 @@
 cmake_minimum_required(VERSION 3.17.1)
-project (Drawing)
 
+project(Drawing)
 set(CMAKE_BUILD_TYPE Release)
 
-set ( PROJECT_LINK_LIBS libgame.so )
-link_directories(/home/djeks/Desktop/Game_of_Life/Game/build)
 
-include_directories(include)
+
+add_library(draw)
+
+
+target_sources(draw PRIVATE game.c game.h)
+
+target_include_directories(draw INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
  
-
-file(GLOB SOURCES "src/*.c")
-
-include_directories(/home/djeks/Desktop/Game_of_Life/Game/include)
-
-add_library(draw SHARED ${SOURCES})
- 
-
-install(TARGETS draw DESTINATION /usr/lib)
+target_link_libraries(draw INTERFACE m)
+target_link_libraries(draw PUBLIC game)

@@ -2,15 +2,11 @@ cmake_minimum_required(VERSION 3.17.1)
 
 project(Game)
 set(CMAKE_BUILD_TYPE Release)
- 
 
-include_directories(include)
- 
+add_library(game )
 
-file(GLOB SOURCES "src/*.c")
- 
+target_sources(game PRIVATE cell.c cell.h arena.c arena.h)
 
-add_library(game SHARED ${SOURCES})
+target_include_directories(game INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
  
-
-install(TARGETS game DESTINATION /usr/lib)
+target_link_libraries(game INTERFACE m)
