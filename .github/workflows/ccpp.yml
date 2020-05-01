@@ -19,4 +19,5 @@ jobs:
         cd build
         cmake ..
         make
+        ./Gol
     
