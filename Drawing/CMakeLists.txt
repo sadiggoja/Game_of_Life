@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.9)
 
 project(Drawing)
-cmake_policy(SET CMP0076 NEW)
+
 set(CMAKE_BUILD_TYPE Release)
 
 
@@ -13,5 +13,5 @@ target_sources(draw PRIVATE game.c game.h)
 
 target_include_directories(draw INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
  
-target_link_libraries(draw INTERFACE m)
+
 target_link_libraries(draw PUBLIC game)
