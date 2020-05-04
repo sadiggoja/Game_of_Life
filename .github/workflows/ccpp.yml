@@ -1,4 +1,6 @@
-name: C/C++ CI
+
+name: C - CI
+
 
 on:
   push:
@@ -6,18 +8,69 @@ on:
   pull_request:
     branches: [ master ]
 
-jobs: 
-  build:
 
+jobs:
+  build_linux:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Compile
+
+    - name: 'Packages'
       run: |
-        mkdir build
-        cd build
+         sudo apt update
+         sudo apt install libcunit1-dev
+    - name: 'Compile'
+      run: |
+        mkdir BuildCI
+        cd BuildCI
         cmake ..
-        make
-        
+        cmake --build .
+    - uses: actions/upload-artifact@v1
+      with:
+        name: binaries
+        path: BuildCI/
+  test_linux:
+    needs: [build_linux]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v1
+        with:
+          name: binaries
+          path: BuildCI/
+      - name: 'Packages'
+        run: |
+          sudo apt update
+          sudo apt install libcunit1-dev
+      - name: 'Testing'
+        run: |
+          cd BuildCI
+          chmod +x *
+          ctest -V
+  cover_linux:
+    needs: [test_linux]
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v2
+     - uses: actions/download-artifact@v1
+       with:
+        name: binaries
+        path: BuildCI/
+     - name: 'Packages'
+       run: |
+        sudo apt update
+        sudo apt install libcunit1-dev gcovr libcunit1-dev
+     - name: 'Coverage'
+       run: |
+           cd BuildCI
+           chmod +x *
+           make cover_html
+     - uses: actions/upload-artifact@v1
+       with:
+         name: binaries
+         path: BuildCI/      
+    
+      
+    
+
     

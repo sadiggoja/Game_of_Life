@@ -27,8 +27,9 @@ Following the rule for '0' cells it gives white color and for '1' red color
 
 void playGame(int size, int **arena){
     
-    printf("\33[1J");                      // clear screen
-    while(1){
+    printf("\33[1J");  
+    int counter;                    // clear screen
+    while(counter<12){
         printf("\033[?25l");                // Hide cursor
         for(int i=0; i<size; i++){
             printf("\033[%d;4H",i+2);
@@ -44,6 +45,7 @@ void playGame(int size, int **arena){
         printf("\033[?25h");
         sleep(1);
         arena=GameStep(size, arena);
+        counter++;
         }
     
 }
