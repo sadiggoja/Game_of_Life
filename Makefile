@@ -7,6 +7,7 @@ all :
 exec:
 	./${Object}
 
+
 docs:
 	doxygen Doxyfile
 	${MAKE} -C Doc/latex
