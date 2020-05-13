@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdraw.a  CMakeFiles/draw.dir/game.c.o
+/usr/bin/ranlib libdraw.a

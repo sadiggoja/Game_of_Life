@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sadig/Desktop/ufaz/dev/game_of_life/Game_of_Life/Game/arena.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+unistd.h
+-
+arena.h
+/home/sadig/Desktop/ufaz/dev/game_of_life/Game_of_Life/Game/arena.h
+
+/home/sadig/Desktop/ufaz/dev/game_of_life/Game_of_Life/Game/arena.h
+
+/home/sadig/Desktop/ufaz/dev/game_of_life/Game_of_Life/Game/cell.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+unistd.h
+-
+cell.h
+/home/sadig/Desktop/ufaz/dev/game_of_life/Game_of_Life/Game/cell.h
+
+/home/sadig/Desktop/ufaz/dev/game_of_life/Game_of_Life/Game/cell.h
+
