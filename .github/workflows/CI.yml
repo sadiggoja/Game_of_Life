@@ -20,7 +20,8 @@ jobs:
       run: |
          sudo apt update
          sudo apt install libcunit1-dev
-         sudo apt-get install libsdl2-dev
+         sudo apt install libsdl2-dev
+         sudo apt install doxygen
     - name: 'Compile'
       run: |
         mkdir BuildCI
@@ -43,7 +44,8 @@ jobs:
         run: |
           sudo apt update
           sudo apt install libcunit1-dev
-          sudo apt-get install libsdl2-dev
+          sudo apt install libsdl2-dev
+          sudo apt install doxygen
       - name: 'Testing'
         run: |
           cd BuildCI
