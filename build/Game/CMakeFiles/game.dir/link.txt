@@ -1,2 +1,0 @@
-/usr/bin/ar qc libgame.a  CMakeFiles/game.dir/cell.c.o CMakeFiles/game.dir/arena.c.o
-/usr/bin/ranlib libgame.a

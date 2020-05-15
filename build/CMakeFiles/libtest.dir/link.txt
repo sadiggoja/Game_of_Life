@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic --coverage CMakeFiles/libtest.dir/cunit_t.c.o  -o libtest  Game/libgame.a Drawing/libdraw.a -lcunit Game/libgame.a 

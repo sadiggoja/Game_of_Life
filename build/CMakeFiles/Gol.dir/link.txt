@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic --coverage CMakeFiles/Gol.dir/main.c.o  -o Gol  -Wl,-rpath,/usr/local/lib Game/libgame.a Drawing/libdraw.a /usr/local/lib/libSDL2.so /usr/local/lib/libSDL2main.a Game/libgame.a -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags 
