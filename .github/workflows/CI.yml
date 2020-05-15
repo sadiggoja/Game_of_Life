@@ -20,6 +20,7 @@ jobs:
       run: |
          sudo apt update
          sudo apt install libcunit1-dev
+         sudo apt-get install libsdl2-dev
     - name: 'Compile'
       run: |
         mkdir BuildCI
@@ -42,6 +43,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install libcunit1-dev
+          sudo apt-get install libsdl2-dev
       - name: 'Testing'
         run: |
           cd BuildCI
