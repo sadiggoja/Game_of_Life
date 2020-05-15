@@ -1,0 +1,58 @@
+\hypertarget{game_8c}{}\section{Drawing/game.c File Reference}
+\label{game_8c}\index{Drawing/game.\+c@{Drawing/game.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}arena.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cell.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdl.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for game.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \hyperlink{game_8c_af9f87e14e073dbe0169f54f2d353c941}{Game\+Step} (int \hyperlink{cunit__t_8c_a439227feff9d7f55384e8780cfc2eb82}{size}, int $\ast$$\ast$game)
+\item 
+void \hyperlink{game_8c_afa5291b6176515e5611f0230f2794b1b}{play\+Game} (int \hyperlink{cunit__t_8c_a439227feff9d7f55384e8780cfc2eb82}{size}, int $\ast$$\ast$arena)
+\item 
+void \hyperlink{game_8c_a824a64816df1a405890e7b371a421875}{draw\+\_\+\+S\+DL} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, int $\ast$$\ast$arena, int \hyperlink{cunit__t_8c_a439227feff9d7f55384e8780cfc2eb82}{size})
+\item 
+void \hyperlink{game_8c_a5931c0456523198ca5c114fba4d0005b}{play\+Game\+\_\+\+S\+DL} (int \hyperlink{cunit__t_8c_a439227feff9d7f55384e8780cfc2eb82}{size}, int $\ast$$\ast$arena)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{game_8c_a824a64816df1a405890e7b371a421875}\label{game_8c_a824a64816df1a405890e7b371a421875}} 
+\index{game.\+c@{game.\+c}!draw\+\_\+\+S\+DL@{draw\+\_\+\+S\+DL}}
+\index{draw\+\_\+\+S\+DL@{draw\+\_\+\+S\+DL}!game.\+c@{game.\+c}}
+\subsubsection{\texorpdfstring{draw\+\_\+\+S\+D\+L()}{draw\_SDL()}}
+{\footnotesize\ttfamily void draw\+\_\+\+S\+DL (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int $\ast$$\ast$}]{arena,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_af9f87e14e073dbe0169f54f2d353c941}\label{game_8c_af9f87e14e073dbe0169f54f2d353c941}} 
+\index{game.\+c@{game.\+c}!Game\+Step@{Game\+Step}}
+\index{Game\+Step@{Game\+Step}!game.\+c@{game.\+c}}
+\subsubsection{\texorpdfstring{Game\+Step()}{GameStep()}}
+{\footnotesize\ttfamily int$\ast$$\ast$ Game\+Step (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{int $\ast$$\ast$}]{game }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_afa5291b6176515e5611f0230f2794b1b}\label{game_8c_afa5291b6176515e5611f0230f2794b1b}} 
+\index{game.\+c@{game.\+c}!play\+Game@{play\+Game}}
+\index{play\+Game@{play\+Game}!game.\+c@{game.\+c}}
+\subsubsection{\texorpdfstring{play\+Game()}{playGame()}}
+{\footnotesize\ttfamily void play\+Game (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{int $\ast$$\ast$}]{arena }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_a5931c0456523198ca5c114fba4d0005b}\label{game_8c_a5931c0456523198ca5c114fba4d0005b}} 
+\index{game.\+c@{game.\+c}!play\+Game\+\_\+\+S\+DL@{play\+Game\+\_\+\+S\+DL}}
+\index{play\+Game\+\_\+\+S\+DL@{play\+Game\+\_\+\+S\+DL}!game.\+c@{game.\+c}}
+\subsubsection{\texorpdfstring{play\+Game\+\_\+\+S\+D\+L()}{playGame\_SDL()}}
+{\footnotesize\ttfamily void play\+Game\+\_\+\+S\+DL (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{int $\ast$$\ast$}]{arena }\end{DoxyParamCaption})}
+
