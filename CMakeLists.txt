@@ -9,6 +9,8 @@ cmake_policy(SET CMP0076 NEW)
 add_subdirectory(Game)
 add_subdirectory(Drawing)
 
+find_package(SDL2 CONFIG REQUIRED)
+include_directories(${SDL2_INCLUDE_DIR})
 
 add_executable(Gol main.c)
 target_link_libraries(Gol PUBLIC game draw )
