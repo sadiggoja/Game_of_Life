@@ -4,9 +4,9 @@ name: C - CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ Final_Work ]
   pull_request:
-    branches: [ master ]
+    branches: [ Final_Work ]
 
 
 jobs:
