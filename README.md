@@ -32,13 +32,16 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-Give the example
+mkdir build
+cd build
+cmake ..
+make
 ```
 
-And repeat
-
+And running 
 ```
-until finished
+./Gol [OPTION]
+  [OPTION]: 0 for clipped, 1 for circular.
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
