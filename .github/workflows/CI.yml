@@ -21,6 +21,13 @@ jobs:
          sudo apt update
          sudo apt install libcunit1-dev
          sudo apt install libsdl2-dev
+         hg clone https://hg.libsdl.org/SDL SDL
+         cd SDL
+         mkdir build
+         cd build
+         ../configure
+         make
+         sudo make install
          sudo apt install doxygen
     - name: 'Compile'
       run: |
