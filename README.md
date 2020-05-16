@@ -1,6 +1,6 @@
 # Game_of_Life
 
-One Paragraph of project description goes here
+Conwoy's Game of Life in C with SDL
 
 ## Getting Started
 
@@ -8,10 +8,21 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install the software and how to install them (for Ubuntu)
 
 ```
-Give examples
+Simple DirectMedia Layer : 
+  sudo apt-get install libsdl2-2.0
+CUnit: 
+  sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
+CMake: 
+  wget https://github.com/Kitware/CMake/releases/download/v3.15.2/cmake-3.15.2.tar.gz
+  tar -zxvf cmake-3.15.2.tar.gz
+  cd cmake-3.15.2
+  ./bootstrap
+  make
+  sudo make install
+  
 ```
 
 ### Installing
