@@ -43,7 +43,9 @@ And running
 ./Gol [OPTION]
   [OPTION]: 0 for clipped, 1 for circular.
 ```
-
+input the type if [OPTION] is not added from terminal
+input size
+input selection for SDL 
 
 ## Running the tests
 
