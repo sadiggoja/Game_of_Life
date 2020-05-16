@@ -71,6 +71,8 @@ jobs:
        run: |
         sudo apt update
         sudo apt install libcunit1-dev gcovr libcunit1-dev
+        sudo apt install libsdl2-dev
+        sudo apt install doxygen
      - name: 'Coverage'
        run: |
            cd BuildCI
