@@ -52,5 +52,5 @@ input selection for SDL
 ```
 cmake -V
 ```
-
+see results in Testing folder
 
