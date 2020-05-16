@@ -73,6 +73,13 @@ jobs:
         sudo apt install libcunit1-dev gcovr libcunit1-dev
         sudo apt install libsdl2-dev
         sudo apt install doxygen
+        hg clone https://hg.libsdl.org/SDL SDL
+        cd SDL
+        mkdir build
+        cd build
+        ../configure
+        make
+        sudo make install
      - name: 'Coverage'
        run: |
            cd BuildCI
