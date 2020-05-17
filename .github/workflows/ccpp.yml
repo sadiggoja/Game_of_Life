@@ -4,9 +4,9 @@ name: C - CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ Final_Work ]
   pull_request:
-    branches: [ master ]
+    branches: [ Final_Work ]
 
 
 jobs:
@@ -20,6 +20,15 @@ jobs:
       run: |
          sudo apt update
          sudo apt install libcunit1-dev
+         sudo apt install libsdl2-dev
+         hg clone https://hg.libsdl.org/SDL SDL
+         cd SDL
+         mkdir build
+         cd build
+         ../configure
+         make
+         sudo make install
+         sudo apt install doxygen
     - name: 'Compile'
       run: |
         mkdir BuildCI
@@ -42,6 +51,8 @@ jobs:
         run: |
           sudo apt update
           sudo apt install libcunit1-dev
+          sudo apt install libsdl2-dev
+          sudo apt install doxygen
       - name: 'Testing'
         run: |
           cd BuildCI
@@ -60,6 +71,15 @@ jobs:
        run: |
         sudo apt update
         sudo apt install libcunit1-dev gcovr libcunit1-dev
+        sudo apt install libsdl2-dev
+        sudo apt install doxygen
+        hg clone https://hg.libsdl.org/SDL SDL
+        cd SDL
+        mkdir build
+        cd build
+        ../configure
+        make
+        sudo make install
      - name: 'Coverage'
        run: |
            cd BuildCI
