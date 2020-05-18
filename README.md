@@ -38,7 +38,11 @@ cd build
 cmake ..
 make
 ```
-### Custom Targets and run steps of Game_of_Life
+## Custom Targets and run steps of Game_of_Life
+### Doc folder
+There is a Doc folder pregenerated for u, that you can observe source documentation before using it.
+With html and latex pages.
+### Branches
 In branch Makefile 
 ```
 make all 
@@ -69,3 +73,10 @@ ctest -V
 ```
 see results in Testing folder
 
+## Continuous Integration
+
+You can already find binary zip folder in the Action section of the repository , which includes all the main targets itself.
+
+## Author or just students of UFAZ Computer Science L2
+### Sadig Gojayev
+### Javid Guliyev
