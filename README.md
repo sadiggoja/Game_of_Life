@@ -12,24 +12,25 @@ What things you need to install the software and how to install them (for Ubuntu
 
 ```
 Simple DirectMedia Layer : 
-  sudo apt-get install libsdl2-2.0
+  sudo apt-get install libsdl2-2.0 libsdl2-dev
 CUnit: 
   sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
+  sudo apt-get install gcovr ( It's for cover & cover_html targets )
 CMake: 
-  wget https://github.com/Kitware/CMake/releases/download/v3.15.2/cmake-3.15.2.tar.gz
-  tar -zxvf cmake-3.15.2.tar.gz
-  cd cmake-3.15.2
+  wget https://github.com/Kitware/CMake/releases/download/v3.17.1/cmake-3.17.1.tar.gz
+  tar -zxvf cmake-3.17.1.tar.gz
+  cd cmake-3.17.1
   ./bootstrap
   make
   sudo make install
-  
+Doxygen:( It's for docs target)  
+  sudo apt install doxygen
 ```
-
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+Say what the step will be ( After opening terminal in source folder ( root folder of the project)
 
 ```
 mkdir build
@@ -37,8 +38,22 @@ cd build
 cmake ..
 make
 ```
-
-And running 
+### Custom Targets and run steps of Game_of_Life
+In branch Makefile 
+```
+make all 
+make docs ( Creates source documentation a Doxygen folder which includes html and latex pages)
+make dist ( Creates tar file )
+make clean 
+```
+In master
+```
+make cover
+make cover_html
+make dist
+make docs
+```
+Running : Gol target (main target of the game )
 ```
 ./Gol [OPTION]
   [OPTION]: 0 for clipped, 1 for circular.
@@ -50,7 +65,7 @@ input selection for SDL
 ## Running the tests
 
 ```
-cmake -V
+ctest -V
 ```
 see results in Testing folder
 
