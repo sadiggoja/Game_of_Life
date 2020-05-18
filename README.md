@@ -77,6 +77,6 @@ see results in Testing folder
 
 You can already find binary zip folder in the Action section of the repository , which includes all the main targets itself.
 
-## Author or just students of UFAZ Computer Science L2
-### Sadig Gojayev
-### Javid Guliyev
+## Authors or just students of UFAZ Computer Science L2
+* **Javid Guliyev**
+* **Sadig Gojayev**
